@@ -29,59 +29,56 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IE6));
-            statusStrip1 = new StatusStrip();
-            menuStrip1 = new MenuStrip();
-            toolStrip1 = new ToolStrip();
+            statusStrip = new StatusStrip();
+            menuStrip = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
             editToolStripMenuItem = new ToolStripMenuItem();
             viewToolStripMenuItem = new ToolStripMenuItem();
             favouritesToolStripMenuItem = new ToolStripMenuItem();
             toolsToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
+            toolStripControlBar = new ToolStrip();
             TSBtnBack = new ToolStripSplitButton();
             TSBtnForward = new ToolStripSplitButton();
-            toolStripButton1 = new ToolStripButton();
-            toolStripButton2 = new ToolStripButton();
-            toolStripButton3 = new ToolStripButton();
-            toolStripButton4 = new ToolStripButton();
+            TSBStopLoading = new ToolStripButton();
+            TSBRefresh = new ToolStripButton();
+            TSBHome = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
-            toolStripButton5 = new ToolStripButton();
-            toolStripButton6 = new ToolStripButton();
-            toolStripButton7 = new ToolStripButton();
+            TSBSearch = new ToolStripButton();
+            TSBFavourites = new ToolStripButton();
+            TSBHistory = new ToolStripButton();
             toolStripSeparator2 = new ToolStripSeparator();
-            toolStripSplitButton3 = new ToolStripSplitButton();
-            toolStripButton8 = new ToolStripButton();
-            toolStripButton9 = new ToolStripButton();
-            toolStripButton10 = new ToolStripButton();
-            menuStrip1.SuspendLayout();
-            toolStrip1.SuspendLayout();
+            TSBEmail = new ToolStripSplitButton();
+            TSBPrint = new ToolStripButton();
+            TSBEdit = new ToolStripButton();
+            TSBMessage = new ToolStripButton();
+            toolStripAddressBar = new ToolStrip();
+            toolStripLabel1 = new ToolStripLabel();
+            toolStripComboBox1 = new ToolStripComboBox();
+            toolStripButton11 = new ToolStripButton();
+            menuStrip.SuspendLayout();
+            toolStripControlBar.SuspendLayout();
+            toolStripAddressBar.SuspendLayout();
             SuspendLayout();
             // 
-            // statusStrip1
+            // statusStrip
             // 
-            statusStrip1.Location = new Point(0, 581);
-            statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(1027, 22);
-            statusStrip1.TabIndex = 0;
-            statusStrip1.Text = "statusStrip1";
+            statusStrip.Location = new Point(0, 581);
+            statusStrip.Name = "statusStrip";
+            statusStrip.Size = new Size(1027, 22);
+            statusStrip.TabIndex = 0;
+            statusStrip.Text = "statusStrip1";
             // 
-            // menuStrip1
+            // menuStrip
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, viewToolStripMenuItem, favouritesToolStripMenuItem, toolsToolStripMenuItem, helpToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1027, 24);
-            menuStrip1.TabIndex = 1;
-            menuStrip1.Text = "menuStrip1";
-            // 
-            // toolStrip1
-            // 
-            toolStrip1.Items.AddRange(new ToolStripItem[] { TSBtnBack, TSBtnForward, toolStripButton1, toolStripButton2, toolStripButton3, toolStripButton4, toolStripSeparator1, toolStripButton5, toolStripButton6, toolStripButton7, toolStripSeparator2, toolStripSplitButton3, toolStripButton8, toolStripButton9, toolStripButton10 });
-            toolStrip1.Location = new Point(0, 24);
-            toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(1027, 25);
-            toolStrip1.TabIndex = 2;
-            toolStrip1.Text = "toolStrip1";
+            menuStrip.BackgroundImageLayout = ImageLayout.Zoom;
+            menuStrip.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, viewToolStripMenuItem, favouritesToolStripMenuItem, toolsToolStripMenuItem, helpToolStripMenuItem });
+            menuStrip.Location = new Point(0, 0);
+            menuStrip.Name = "menuStrip";
+            menuStrip.RenderMode = ToolStripRenderMode.System;
+            menuStrip.Size = new Size(1027, 24);
+            menuStrip.TabIndex = 1;
+            menuStrip.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
@@ -119,177 +116,214 @@
             helpToolStripMenuItem.Size = new Size(44, 20);
             helpToolStripMenuItem.Text = "Help";
             // 
+            // toolStripControlBar
+            // 
+            toolStripControlBar.ImageScalingSize = new Size(32, 32);
+            toolStripControlBar.Items.AddRange(new ToolStripItem[] { TSBtnBack, TSBtnForward, TSBStopLoading, TSBRefresh, TSBHome, toolStripSeparator1, TSBSearch, TSBFavourites, TSBHistory, toolStripSeparator2, TSBEmail, TSBPrint, TSBEdit, TSBMessage });
+            toolStripControlBar.Location = new Point(0, 24);
+            toolStripControlBar.Name = "toolStripControlBar";
+            toolStripControlBar.RenderMode = ToolStripRenderMode.System;
+            toolStripControlBar.Size = new Size(1027, 39);
+            toolStripControlBar.TabIndex = 2;
+            toolStripControlBar.Text = "toolStrip1";
+            // 
             // TSBtnBack
             // 
-            TSBtnBack.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            TSBtnBack.Image = (Image)resources.GetObject("TSBtnBack.Image");
+            TSBtnBack.Image = Properties.Resources.back;
             TSBtnBack.ImageTransparentColor = Color.Magenta;
             TSBtnBack.Name = "TSBtnBack";
-            TSBtnBack.Size = new Size(32, 22);
+            TSBtnBack.Size = new Size(80, 36);
             TSBtnBack.Text = "Back";
             // 
             // TSBtnForward
             // 
             TSBtnForward.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            TSBtnForward.Image = (Image)resources.GetObject("TSBtnForward.Image");
+            TSBtnForward.Image = Properties.Resources.forward;
             TSBtnForward.ImageTransparentColor = Color.Magenta;
             TSBtnForward.Name = "TSBtnForward";
-            TSBtnForward.Size = new Size(32, 22);
+            TSBtnForward.Size = new Size(48, 36);
             TSBtnForward.Text = "Forward";
             // 
-            // toolStripButton1
+            // TSBStopLoading
             // 
-            toolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton1.Image = (Image)resources.GetObject("toolStripButton1.Image");
-            toolStripButton1.ImageTransparentColor = Color.Magenta;
-            toolStripButton1.Name = "toolStripButton1";
-            toolStripButton1.Size = new Size(23, 22);
-            toolStripButton1.Text = "toolStripButton1";
+            TSBStopLoading.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            TSBStopLoading.Image = (Image)resources.GetObject("TSBStopLoading.Image");
+            TSBStopLoading.ImageTransparentColor = Color.Magenta;
+            TSBStopLoading.Name = "TSBStopLoading";
+            TSBStopLoading.Size = new Size(36, 36);
+            TSBStopLoading.Text = "toolStripButton1";
             // 
-            // toolStripButton2
+            // TSBRefresh
             // 
-            toolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton2.Image = (Image)resources.GetObject("toolStripButton2.Image");
-            toolStripButton2.ImageTransparentColor = Color.Magenta;
-            toolStripButton2.Name = "toolStripButton2";
-            toolStripButton2.Size = new Size(23, 22);
-            toolStripButton2.Text = "toolStripButton2";
+            TSBRefresh.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            TSBRefresh.Image = (Image)resources.GetObject("TSBRefresh.Image");
+            TSBRefresh.ImageTransparentColor = Color.Magenta;
+            TSBRefresh.Name = "TSBRefresh";
+            TSBRefresh.Size = new Size(36, 36);
+            TSBRefresh.Text = "toolStripButton2";
             // 
-            // toolStripButton3
+            // TSBHome
             // 
-            toolStripButton3.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton3.Image = (Image)resources.GetObject("toolStripButton3.Image");
-            toolStripButton3.ImageTransparentColor = Color.Magenta;
-            toolStripButton3.Name = "toolStripButton3";
-            toolStripButton3.Size = new Size(23, 22);
-            toolStripButton3.Text = "toolStripButton3";
-            // 
-            // toolStripButton4
-            // 
-            toolStripButton4.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton4.Image = (Image)resources.GetObject("toolStripButton4.Image");
-            toolStripButton4.ImageTransparentColor = Color.Magenta;
-            toolStripButton4.Name = "toolStripButton4";
-            toolStripButton4.Size = new Size(23, 22);
-            toolStripButton4.Text = "toolStripButton4";
+            TSBHome.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            TSBHome.Image = (Image)resources.GetObject("TSBHome.Image");
+            TSBHome.ImageTransparentColor = Color.Magenta;
+            TSBHome.Name = "TSBHome";
+            TSBHome.Size = new Size(36, 36);
+            TSBHome.Text = "toolStripButton3";
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(6, 25);
+            toolStripSeparator1.Size = new Size(6, 39);
             // 
-            // toolStripButton5
+            // TSBSearch
             // 
-            toolStripButton5.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton5.Image = (Image)resources.GetObject("toolStripButton5.Image");
-            toolStripButton5.ImageTransparentColor = Color.Magenta;
-            toolStripButton5.Name = "toolStripButton5";
-            toolStripButton5.Size = new Size(23, 22);
-            toolStripButton5.Text = "toolStripButton5";
+            TSBSearch.Image = (Image)resources.GetObject("TSBSearch.Image");
+            TSBSearch.ImageTransparentColor = Color.Magenta;
+            TSBSearch.Name = "TSBSearch";
+            TSBSearch.Size = new Size(78, 36);
+            TSBSearch.Text = "Search";
             // 
-            // toolStripButton6
+            // TSBFavourites
             // 
-            toolStripButton6.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton6.Image = (Image)resources.GetObject("toolStripButton6.Image");
-            toolStripButton6.ImageTransparentColor = Color.Magenta;
-            toolStripButton6.Name = "toolStripButton6";
-            toolStripButton6.Size = new Size(23, 22);
-            toolStripButton6.Text = "toolStripButton6";
+            TSBFavourites.Image = (Image)resources.GetObject("TSBFavourites.Image");
+            TSBFavourites.ImageTransparentColor = Color.Magenta;
+            TSBFavourites.Name = "TSBFavourites";
+            TSBFavourites.Size = new Size(97, 36);
+            TSBFavourites.Text = "Favourites";
             // 
-            // toolStripButton7
+            // TSBHistory
             // 
-            toolStripButton7.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton7.Image = (Image)resources.GetObject("toolStripButton7.Image");
-            toolStripButton7.ImageTransparentColor = Color.Magenta;
-            toolStripButton7.Name = "toolStripButton7";
-            toolStripButton7.Size = new Size(23, 22);
-            toolStripButton7.Text = "toolStripButton7";
+            TSBHistory.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            TSBHistory.Image = (Image)resources.GetObject("TSBHistory.Image");
+            TSBHistory.ImageTransparentColor = Color.Magenta;
+            TSBHistory.Name = "TSBHistory";
+            TSBHistory.Size = new Size(36, 36);
+            TSBHistory.Text = "toolStripButton7";
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(6, 25);
+            toolStripSeparator2.Size = new Size(6, 39);
             // 
-            // toolStripSplitButton3
+            // TSBEmail
             // 
-            toolStripSplitButton3.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripSplitButton3.Image = (Image)resources.GetObject("toolStripSplitButton3.Image");
-            toolStripSplitButton3.ImageTransparentColor = Color.Magenta;
-            toolStripSplitButton3.Name = "toolStripSplitButton3";
-            toolStripSplitButton3.Size = new Size(32, 22);
-            toolStripSplitButton3.Text = "toolStripSplitButton3";
+            TSBEmail.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            TSBEmail.Image = (Image)resources.GetObject("TSBEmail.Image");
+            TSBEmail.ImageTransparentColor = Color.Magenta;
+            TSBEmail.Name = "TSBEmail";
+            TSBEmail.Size = new Size(48, 36);
+            TSBEmail.Text = "toolStripSplitButton3";
             // 
-            // toolStripButton8
+            // TSBPrint
             // 
-            toolStripButton8.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton8.Image = (Image)resources.GetObject("toolStripButton8.Image");
-            toolStripButton8.ImageTransparentColor = Color.Magenta;
-            toolStripButton8.Name = "toolStripButton8";
-            toolStripButton8.Size = new Size(23, 22);
-            toolStripButton8.Text = "toolStripButton8";
+            TSBPrint.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            TSBPrint.Image = (Image)resources.GetObject("TSBPrint.Image");
+            TSBPrint.ImageTransparentColor = Color.Magenta;
+            TSBPrint.Name = "TSBPrint";
+            TSBPrint.Size = new Size(36, 36);
+            TSBPrint.Text = "toolStripButton8";
             // 
-            // toolStripButton9
+            // TSBEdit
             // 
-            toolStripButton9.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton9.Image = (Image)resources.GetObject("toolStripButton9.Image");
-            toolStripButton9.ImageTransparentColor = Color.Magenta;
-            toolStripButton9.Name = "toolStripButton9";
-            toolStripButton9.Size = new Size(23, 22);
-            toolStripButton9.Text = "toolStripButton9";
+            TSBEdit.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            TSBEdit.Image = (Image)resources.GetObject("TSBEdit.Image");
+            TSBEdit.ImageTransparentColor = Color.Magenta;
+            TSBEdit.Name = "TSBEdit";
+            TSBEdit.Size = new Size(36, 36);
+            TSBEdit.Text = "toolStripButton9";
             // 
-            // toolStripButton10
+            // TSBMessage
             // 
-            toolStripButton10.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton10.Image = (Image)resources.GetObject("toolStripButton10.Image");
-            toolStripButton10.ImageTransparentColor = Color.Magenta;
-            toolStripButton10.Name = "toolStripButton10";
-            toolStripButton10.Size = new Size(23, 22);
-            toolStripButton10.Text = "toolStripButton10";
+            TSBMessage.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            TSBMessage.Image = (Image)resources.GetObject("TSBMessage.Image");
+            TSBMessage.ImageTransparentColor = Color.Magenta;
+            TSBMessage.Name = "TSBMessage";
+            TSBMessage.Size = new Size(36, 36);
+            TSBMessage.Text = "toolStripButton10";
+            // 
+            // toolStripAddressBar
+            // 
+            toolStripAddressBar.ImeMode = ImeMode.NoControl;
+            toolStripAddressBar.Items.AddRange(new ToolStripItem[] { toolStripLabel1, toolStripComboBox1, toolStripButton11 });
+            toolStripAddressBar.LayoutStyle = ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            toolStripAddressBar.Location = new Point(0, 63);
+            toolStripAddressBar.Name = "toolStripAddressBar";
+            toolStripAddressBar.RenderMode = ToolStripRenderMode.System;
+            toolStripAddressBar.Size = new Size(1027, 25);
+            toolStripAddressBar.TabIndex = 3;
+            toolStripAddressBar.Text = "toolStrip2";
+            // 
+            // toolStripLabel1
+            // 
+            toolStripLabel1.Name = "toolStripLabel1";
+            toolStripLabel1.Size = new Size(49, 22);
+            toolStripLabel1.Text = "Address";
+            // 
+            // toolStripComboBox1
+            // 
+            toolStripComboBox1.Name = "toolStripComboBox1";
+            toolStripComboBox1.Size = new Size(600, 25);
+            // 
+            // toolStripButton11
+            // 
+            toolStripButton11.Image = (Image)resources.GetObject("toolStripButton11.Image");
+            toolStripButton11.ImageTransparentColor = Color.Magenta;
+            toolStripButton11.Name = "toolStripButton11";
+            toolStripButton11.Size = new Size(42, 22);
+            toolStripButton11.Text = "Go";
             // 
             // IE6
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1027, 603);
-            Controls.Add(statusStrip1);
-            Controls.Add(toolStrip1);
-            Controls.Add(menuStrip1);
-            MainMenuStrip = menuStrip1;
+            Controls.Add(toolStripAddressBar);
+            Controls.Add(statusStrip);
+            Controls.Add(toolStripControlBar);
+            Controls.Add(menuStrip);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MainMenuStrip = menuStrip;
             Name = "IE6";
             Text = "IEClassic";
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
-            toolStrip1.ResumeLayout(false);
-            toolStrip1.PerformLayout();
+            menuStrip.ResumeLayout(false);
+            menuStrip.PerformLayout();
+            toolStripControlBar.ResumeLayout(false);
+            toolStripControlBar.PerformLayout();
+            toolStripAddressBar.ResumeLayout(false);
+            toolStripAddressBar.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private StatusStrip statusStrip1;
-        private MenuStrip menuStrip1;
+        private StatusStrip statusStrip;
+        private MenuStrip menuStrip;
         private ToolStripMenuItem fileToolStripMenuItem;
         private ToolStripMenuItem editToolStripMenuItem;
         private ToolStripMenuItem viewToolStripMenuItem;
         private ToolStripMenuItem favouritesToolStripMenuItem;
         private ToolStripMenuItem toolsToolStripMenuItem;
         private ToolStripMenuItem helpToolStripMenuItem;
-        private ToolStrip toolStrip1;
+        private ToolStrip toolStripControlBar;
         private ToolStripSplitButton TSBtnBack;
         private ToolStripSplitButton TSBtnForward;
-        private ToolStripButton toolStripButton1;
-        private ToolStripButton toolStripButton2;
-        private ToolStripButton toolStripButton3;
-        private ToolStripButton toolStripButton4;
+        private ToolStripButton TSBStopLoading;
+        private ToolStripButton TSBRefresh;
+        private ToolStripButton TSBHome;
         private ToolStripSeparator toolStripSeparator1;
-        private ToolStripButton toolStripButton5;
-        private ToolStripButton toolStripButton6;
-        private ToolStripButton toolStripButton7;
+        private ToolStripButton TSBSearch;
+        private ToolStripButton TSBFavourites;
+        private ToolStripButton TSBHistory;
         private ToolStripSeparator toolStripSeparator2;
-        private ToolStripSplitButton toolStripSplitButton3;
-        private ToolStripButton toolStripButton8;
-        private ToolStripButton toolStripButton9;
-        private ToolStripButton toolStripButton10;
+        private ToolStripSplitButton TSBEmail;
+        private ToolStripButton TSBPrint;
+        private ToolStripButton TSBEdit;
+        private ToolStripButton TSBMessage;
+        private ToolStrip toolStripAddressBar;
+        private ToolStripLabel toolStripLabel1;
+        private ToolStripComboBox toolStripComboBox1;
+        private ToolStripButton toolStripButton11;
     }
 }
